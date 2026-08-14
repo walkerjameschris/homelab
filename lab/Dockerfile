@@ -1,7 +1,7 @@
 # Pull minimal JupyterLab IDE
 FROM quay.io/jupyter/minimal-notebook:latest
 
-# Add tools anage Python versions, venvs, and kernels 
+# Add tools to manage Python versions, venvs, and kernels 
 COPY --from=ghcr.io/astral-sh/uv:latest /uv /uvx /bin/
 RUN pip install nb_venv_kernels
 
