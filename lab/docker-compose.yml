@@ -21,6 +21,7 @@ services:
     container_name: lab
     ports:
       - "8888:8888"
+      - "8000:8000"
     volumes:
       - ~/Documents:/home/jovyan/
     environment:
