@@ -37,19 +37,13 @@ services:
   gitlab:
     image: gitlab/gitlab-ce:latest
     container_name: gitlab
-    restart: unless-stopped
-    hostname: 'treehouse'
-    environment:
-      GITLAB_OMNIBUS_CONFIG: |
-        external_url 'http://treehouse:8080'
-        nginx['listen_port'] = 80
-        nginx['listen_https'] = false
     ports:
-      - '8080:80'  # Exposed ONLY for browsing the UI via Tailnet
+      - "8080:80"
     volumes:
       - gitlab-config:/etc/gitlab
       - gitlab-logs:/var/log/gitlab
       - gitlab-data:/var/opt/gitlab
+    restart: unless-stopped
     networks:
       - ollama-network
 
