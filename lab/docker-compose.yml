@@ -32,17 +32,6 @@ services:
     networks:
       - ollama-network
 
-  gitlab:
-    image: gitlab/gitlab-ce:latest
-    container_name: gitlab
-    ports:
-      - "80:80"
-    volumes:
-      - gitlab-data:/var/opt/gitlab
-    restart: unless-stopped
-    networks:
-      - ollama-network
-
 volumes:
   ollama-models:
   gitlab-data:
